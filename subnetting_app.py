@@ -1,4 +1,4 @@
-def dig_bin ():
+def dec_bin ():
     dec1 = []
     bin1 = []
     d = int(input ('ingrese numero decimal: '))
@@ -15,9 +15,10 @@ def dig_bin ():
     bin1.reverse()
     print(bin1)
 
-def bin_digi ():
+def bin_dec ():
     bin2 = [[128], [64],[32],[16],[8],[4],[2],[1]]
     bina = []
+    dec = []
 
     i = 8
     while i > 0:
@@ -25,49 +26,25 @@ def bin_digi ():
         num = int(input('ingrese numero binario'))
         if num == 1 or num == 0:
             bina.append(num)
+        else:
+            print('\n solo ingrese numeros binarios (0 o 1)')
     
-    if bina[0] == 1:
-        d1 = bin2[0][0]
-    else: 
-        d1 = 0
+    j = 0
+    for m in range(0,8):
+        
+        if bina[m] == 1:
+            d1 = bin2[j][0]
+            dec.append(d1)
+        else: 
+            d2 = 0
+            dec.append(d2)
+        j = j +1
+    s = sum(dec)
+    print(dec,s)
 
-    if bina[1] == 1:
-        d2 = bin2[1][0]
-    else:
-        d2 = 0
-    
-    if bina[2] == 1:
-        d3 = bin2[2][0]
-    else: 
-        d3 = 0
-
-    if bina[3] == 1:
-        d4 = bin2[3][0]
-    else:
-        d4 = 0
-
-    if bina[4] == 1:
-        d5 = bin2[4][0]
-    else: 
-        d5 = 0
-
-    if bina[5] == 1:
-        d6 = bin2[5][0]
-    else:
-        d6 = 0
-    if bina[6] == 1:
-        d7 = bin2[6][0]
-    else: 
-        d7 = 0
-
-    if bina[7] == 1:
-        d8 = bin2[7][0]
-    else:
-        d8 = 0
-
-    sum_dec = d1 + d2 + d3 +d4 +d5 +d6 + d7 + d8
-    print(sum_dec)
+    #sum_dec = d1 + d2 + d3 +d4 +d5 +d6 + d7 + d8
+    #print(sum_dec)
 
 
-#dig_bin()
-bin_digi()
+#dec_bin()
+bin_dec()
