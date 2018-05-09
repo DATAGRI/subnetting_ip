@@ -1,9 +1,12 @@
 def dec_bin ():
     dec1 = []
     bin1 = []
-    d = int(input ('ingrese numero decimal: '))
-    dec1.append(d)
-    
+    try:
+        d = int(input ('ingrese numero decimal: '))
+        dec1.append(d)
+    except:
+        print('ingrese solo numeros entre 0 y 1')
+
     i = 9
     while i > 1:
         i = i - 1 
@@ -24,7 +27,8 @@ def bin_dec ():
         i = 8
         while i > 0:
             i = i - 1
-            num = int(input('ingrese numero binario'))
+            print('ingrese solo 8 bits')
+            num = int(input('\ningrese numero binario: '))
             if num == 1 or num == 0:
                 bina.append(num)
             else:
@@ -44,9 +48,8 @@ def bin_dec ():
         #finally: 
         #bin_dec() nunca poner una una misma funcion dentro de su propia funcion (recursion), despues se vuelve infinito
         # esto mas bien sirve para llamar otra funcion difrente una vez el codigo ejecutado no tenga problemas  
-
     s = sum(dec)
-    print(dec,s)
+    print(s)
 
-#dec_bin()
+dec_bin()
 bin_dec()
