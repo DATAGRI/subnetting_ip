@@ -19,32 +19,34 @@ def bin_dec ():
     bin2 = [[128], [64],[32],[16],[8],[4],[2],[1]]
     bina = []
     dec = []
+      
+    try:
+        i = 8
+        while i > 0:
+            i = i - 1
+            num = int(input('ingrese numero binario'))
+            if num == 1 or num == 0:
+                bina.append(num)
+            else:
+                print('\n solo ingrese numeros binarios (0 o 1)')
 
-    i = 8
-    while i > 0:
-        i = i - 1
-        num = int(input('ingrese numero binario'))
-        if num == 1 or num == 0:
-            bina.append(num)
-        else:
-            print('\n solo ingrese numeros binarios (0 o 1)')
-    
-    j = 0
-    for m in range(0,8):
-        
-        if bina[m] == 1:
-            d1 = bin2[j][0]
-            dec.append(d1)
-        else: 
-            d2 = 0
-            dec.append(d2)
-        j = j +1
+        j = 0
+        for m in range(0, 8):
+            if bina[m] == 1:
+                d1 = bin2[j][0]
+                dec.append(d1)
+            else:
+                d2 = 0               
+                dec.append(d2)
+            j = j + 1
+    except:
+        print('Ingrese solo numeros entre 0 y 1, no ingrese letras ni carateres espceciales, vuelva a intentarlo')
+        #finally: 
+        #bin_dec() nunca poner una una misma funcion dentro de su propia funcion (recursion), despues se vuelve infinito
+        # esto mas bien sirve para llamar otra funcion difrente una vez el codigo ejecutado no tenga problemas  
+
     s = sum(dec)
     print(dec,s)
-
-    #sum_dec = d1 + d2 + d3 +d4 +d5 +d6 + d7 + d8
-    #print(sum_dec)
-
 
 #dec_bin()
 bin_dec()
